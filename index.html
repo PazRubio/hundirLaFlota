@@ -12,11 +12,11 @@
         </header>
         <div id="primeraPagina">
             <h2> Coloca tus barcos: </h2>
+            <div id="mensajeError"></div>
 
             <input value="Aleatorios" type="submit" id="aleatorio" onclick='generaJugadores("nuestro");'>
 
-            <form method="post" onsubmit="return validarColocacion()">
-                <div id="mensajeError"></div>
+            <form method="get" onsubmit="validarColocacion()">
                 <div id="formulario">
                     <div class="bloque">
                         <h3> Portaaviones</h3> 
@@ -60,17 +60,13 @@
                             </select>
                         </div>
 
-
-
-                         
-
                         <h3> Acorazado</h3>
                         <div  class="barco">
 
                             <p>Fila</p>
                             <select id="filaA">
                                 <option value="0">A</option>
-                                <option value="1">B</option>
+                                <option value="1" selected="selected">B</option>
                                 <option value="2">C</option>
                                 <option value="3">D</option>
                                 <option value="4">E</option>
@@ -115,7 +111,7 @@
                             <select id="filaB">
                                 <option value="0">A</option>
                                 <option value="1">B</option>
-                                <option value="2">C</option>
+                                <option value="2" selected="selected">C</option>
                                 <option value="3">D</option>
                                 <option value="4">E</option>
                                 <option value="5">F</option>
@@ -157,7 +153,7 @@
                                 <option value="0">A</option>
                                 <option value="1">B</option>
                                 <option value="2">C</option>
-                                <option value="3">D</option>
+                                <option value="3" selected="selected">D</option>
                                 <option value="4">E</option>
                                 <option value="5">F</option>
                                 <option value="6">G</option>
@@ -201,7 +197,7 @@
                                 <option value="1">B</option>
                                 <option value="2">C</option>
                                 <option value="3">D</option>
-                                <option value="4">E</option>
+                                <option value="4" selected="selected">E</option>
                                 <option value="5">F</option>
                                 <option value="6">G</option>
                                 <option value="7">H</option>
@@ -243,7 +239,7 @@
                                 <option value="2">C</option>
                                 <option value="3">D</option>
                                 <option value="4">E</option>
-                                <option value="5">F</option>
+                                <option value="5" selected="selected">F</option>
                                 <option value="6">G</option>
                                 <option value="7">H</option>
                                 <option value="8">I</option>
@@ -287,7 +283,7 @@
                                 <option value="3">D</option>
                                 <option value="4">E</option>
                                 <option value="5">F</option>
-                                <option value="6">G</option>
+                                <option value="6" selected="selected">G</option>
                                 <option value="7">H</option>
                                 <option value="8">I</option>
                                 <option value="9">J</option> 
@@ -329,7 +325,7 @@
                                 <option value="4">E</option>
                                 <option value="5">F</option>
                                 <option value="6">G</option>
-                                <option value="7">H</option>
+                                <option value="7" selected="selected">H</option>
                                 <option value="8">I</option>
                                 <option value="9">J</option>  
                             </select>
@@ -405,7 +401,7 @@
                 </table>
             </div>
             <div class='board' id ='Oponente'> 
-                <h2>Flota Oponente</h2>
+                <h2>Flota Oponente</h2> 
                 <table border="5" align="center">
                     <th></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
                     <tr>            <!--CF-->
@@ -539,8 +535,8 @@
                         <td><button id="99"></button></td>
                     </tr>
                 </table>
-
             </div>
+            <input value="Reiniciar" type="submit" id="reiniciar" onclick="location.reload()">
         </div>
         <script src="testBarcos/logica_juego/metodos_barco.js"></script>
     </body>

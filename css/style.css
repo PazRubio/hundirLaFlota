@@ -43,12 +43,10 @@ table{
     align-content: "center";
 }
 
-
 th {
     background:#1C1C1C;
     color:white;
     font-size:28px;
-
 }
 
 td {
@@ -56,28 +54,13 @@ td {
     height: 40px;
 }
 
-
-form input {
+form input, #reiniciar {
     background-color: rgb(152, 207, 113);
     border-color: rgb(83, 175, 19);
     font-size:1em;
+    width: 100px;
 }
 
-/*#fireButton {
-    border-radius:2em;
-    background-color:red;
-    font-size: 22px;
-}
-
-.hit {
-    background: url("https://edge.alluremedia.com.au/m/l/2017/09/Nukesds2.jpg") no-repeat center center;
-    background-size: 100px;
-}
-
-.miss {
-    background: url("https://vignette.wikia.nocookie.net/airmech/images/3/3b/Bomb.png/revision/latest?cb=20140112081845") no-repeat center center;
-    background-size: 60px;
-}*/
 .caja{
     display: flex;
 }
@@ -147,9 +130,5 @@ h2{
     font-size: 20px;
     font-weight: bold;
     color: red;
-    margin-left: 39%;
-    width: 20%;
-    padding: 10px;
-    text-align: center;
-    
+    text-align: center;    
 }

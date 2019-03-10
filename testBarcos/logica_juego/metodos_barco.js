@@ -175,10 +175,18 @@ function colocar(arrayComprobar){
         }  
     });
     if(!posicionesCorrectas){
-        document.getElementById('mensajeError').innerHTML = "Posiciones no correctas";        
+        document.getElementById('mensajeError').innerHTML = "Posiciones incorrectas, los barcos no pueden super ponerse";        
     } else {
-        jugador = new Jugador("Nuestro", false, false, arrayBarcos, tablero);
+	    jugador = new Jugador("Nuestro", false, false, arrayBarcos, tablero);
+    	arrayBarcos.forEach(barco => {        
+	        var coord = generaCoordenadas(parseInt(barco.coordenada[0]), parseInt(barco.coordenada[1]), barco.dir, barco.numeroCasillas);
+	        tablero.push(coord);
+	    });
         generaJugadores("Oponente");
+	    var primeraPagina = document.getElementById('primeraPagina');
+	    primeraPagina.style.display='none';
+	    caja.style.display = 'block';
+        imprimirBarcos(jugador);
     }
     return posicionesCorrectas;  
 }
@@ -296,7 +304,7 @@ function generaFlotaAleatoria(jugador){
             tableroOponente.push(coord);
         }
     });
-    return new Jugador("Pepe", false, false, arrayBarcos, tablero);
+    return new Jugador("Oponente", false, false, arrayBarcos, tablero);
 }
 
 /* funcion que con una fila y columna de inicio, el tamanio del barco y su direccion
@@ -385,6 +393,7 @@ aleatorio.addEventListener('click', function(e){
     primeraPagina.style.display='none';
     caja.style.display = 'block';
 });
+
 
 /* a todos los button del tablero del oponente le aniadimos el evento
    que comprueba el tiro */
