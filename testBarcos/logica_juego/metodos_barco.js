@@ -41,7 +41,7 @@ function Velero(coordenada, dir) {
 }
 
 /* Cogemos los datos del formulario para colocar a mano los barcos */
-function validarColocacion() {
+function validarColocacion(e) {
     //Portaaviones
     //fila
     var filaP = document.getElementById('filaP');
@@ -140,6 +140,7 @@ function validarColocacion() {
         [valorFilaV2, valorColumnaV2, valorDireccionV2, 1],
         [valorFilaV3, valorColumnaV3, valorDireccionV3, 1]
     ];
+    e.preventDefault;
     return colocar(barcos);
 }
 
@@ -350,6 +351,11 @@ aleatorio.addEventListener('click', function(e){
     caja.style.display = 'block';
 });
 
+var validar = document.getElementById('validar');
+validar.addEventListener('click', function(e){
+    e.preventDefault;
+    validarColocacion(e);
+});
 
 /* a todos los button del tablero del oponente le aniadimos el evento
    que comprueba el tiro */
