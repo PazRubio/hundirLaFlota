@@ -13,6 +13,7 @@ En la práctica se nos indican los requisitos en forma de las historias de usuar
 * Historía de usuario 2: Como jugador querría poder disparar en el tablero del enemigo, para poder hundir sus barcos
 * Historía de usuario 3: Como jugador querría guardar los disparos de ni enemigo en mi tablero
 * Historía de usuario 5: Como jugador querría poder ver el tablero del enemigo con mis disparos y ver mi tablero con mis barcos y disparos recibidos.
+* Historia de usuario 6: Como jugador querría que han hundido todos los barcos de un jugador para que saber quien ha ganado
 * Historía de usuario 7: Como jugador querría poder colocar de forma aleatoria mis barcos, para poder jugar mas rápido
 * Historía de usuario 8: Cómo desarrollador, querría que los barcos se guarden como objetos para poder aprovechar las ventajas de la POO (Abstracción, Herencia)
 * Historía de usuario 9: Cómo desarrollador querría guardar los tableros como un array para poder guardar los barcos y disparos de ambos jugadores
@@ -22,7 +23,6 @@ En la práctica se nos indican los requisitos en forma de las historias de usuar
 
 ### Incompletas
 * Historía de usuario 4: Como jugador querría que al hundir un barco del enemigo me informe para saber que lo he hundido
-* Historia de usuario 6: Como jugador querría que han hundido todos los barcos de un jugador para que saber quien ha ganado
 * Historía de usuario 11: Cómo desarrollador querría tener test unitarios con mocha y chai para probar las funciones de la lógica del juego 
 
 
