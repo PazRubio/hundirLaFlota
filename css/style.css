@@ -126,6 +126,13 @@ h2{
     padding: 0.5% 0.5% 1% 0.5%;
 }
 
+#mensajeFin{
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
+    text-align: center;    
+}
+
 #mensajeError{
     font-size: 20px;
     font-weight: bold;

@@ -3,7 +3,9 @@ var danios = [];
 var tablero = []; /* nuestro array de barcos */
 var tableroOponente = []; /* array de los barcos del oponente */
 var contDisparos = 0; /*  */
+var contDisparosOpo = 0; /*  */
 var tirosAleatorios = []; /* array con los tiros que realiza el oponente */
+var totalBarcos = 0;
 
 /* Objeto Jugador con el nombre y los barcos */
 function Jugador(nombre, turno, ganado, barcos, tablero) {
@@ -304,6 +306,7 @@ function generaFlotaAleatoria(jugador){
             tableroOponente.push(coord);
         }
     });
+    tablero.forEach(barco => { totalBarcos += barco.length; });
     return new Jugador("Oponente", false, false, arrayBarcos, tablero);
 }
 
@@ -411,6 +414,7 @@ function comprobarTiro(boton){
         var idBotonCoord = botonCoord.split('');
         var idFila = idBotonCoord[1];
         var idColumna = idBotonCoord[0];
+
         for(let i = 0; i<tableroOponente.length; i++){            
             for(let j = 0; j<tableroOponente[i].length; j++){
                 var coordenada = tableroOponente[i][j];
@@ -419,15 +423,18 @@ function comprobarTiro(boton){
                 if(idFila == fila && idColumna == columna){ 
                     agua = false;
                     boton.setAttribute('class', 'tocado');
+            		boton.setAttribute('disabled', 'disabled');
                     contDisparos++;
                 }    
             }
         }
-        if(contDisparos == tablero){
-            
+
+        if(contDisparos == totalBarcos){
+            document.getElementById('mensajeFin').innerHTML = "Enhorabuena, has ganado!";
         }
         if(agua){
             boton.setAttribute('class', 'agua');
+            boton.setAttribute('disabled', 'disabled');
             tiroAleatorio();
             // desactivar botones 
         }
@@ -462,19 +469,23 @@ function tiroAleatorio(){
     var td = document.querySelectorAll('td');
     for(let i = 0; i<td.length; i++){
         var valor = td[i].getAttribute('id');
-        for( let j = 0; j < tablero.length; j++){
+        /*if(valor==null){
+        	valor = td[i].firstElementChild.id;
+        }*/
+        for(let j = 0; j < tablero.length; j++){
             tablero[j].forEach(coordBarco => {
                 var separarValor = valor.split('');
 
                 if(valor == coordString){
                     if(coordBarco[0] == separarValor[1] && coordBarco[1] == separarValor[2]){
                         td[i].setAttribute('class', 'tocado');
+                        contDisparosOpo++;
+                        if(contDisparosOpo == totalBarcos){
+				            document.getElementById('mensajeFin').innerHTML = "Lo sentimos, has perdido.";
+				        }
                         tiroAleatorio();
-                        /*var botones = document.querySelectorAll('button');
-                        botones.setAttribute('disabled', 'disabled');*/
                     }else{
                         td[i].setAttribute('class', 'agua');
-                        // activar botones
                     }
                 }
             });
