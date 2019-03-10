@@ -1,0 +1,17 @@
+{
+  "name": "hundirlaflota",
+  "version": "1.0.0",
+  "description": "motor del juego hundir la flota",
+  "main": "app.js",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Paz Rubio, Gema de la Fuente",
+  "license": "ISC"
+}

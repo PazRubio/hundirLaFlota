@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hundir la Flota!</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+
+        <header>
+            <h1>HUNDIR LA FLOTA!!!</h1>
+        </header>
+        <div id="primeraPagina">
+            <h2> Coloca tus barcos: </h2>
+
+
+            <input value="Aleatorios" type="submit" id="aleatorio" onclick='generaJugadores("nuestro");'>
+
+
+            <form method="post" onsubmit="return validarColocacion()">
+
+                <div id="mensajeError">Coordenadas Incorrectas</div>
+
+                <div id="formulario">
+
+                    <div class="bloque">
+                        <h3> Portaaviones</h3> 
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaP" >
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaP">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionP">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+
+
+
+                        <!------------------------------------------------------------>
+
+                        <h3> Acorazado</h3>
+                        <div  class="barco">
+
+                            <p>Fila</p>
+                            <select id="filaA">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaA">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionA">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------>
+
+                    <div class="bloque">
+                        <h3> Buque</h3>
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaB">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaB">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionB">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+
+
+                        <!------------------------------------------------------------>
+
+                        <h3> Lancha 1</h3>
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaL1">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaL1">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionL1">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!------------------------------------------------------------>
+
+                    <div class="bloque">
+                        <h3> Lancha 2</h3>
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaL2">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaL2">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionL2">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+
+                        <!-------------------------------------------------->
+                        <h3> Velero</h3>
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaV1">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaV1">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionV1">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <!-------------------------------------------------->
+                    <div class="bloque">
+                        <h3> Velero 2</h3>
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaV2">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option> 
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaV2">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionV2">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+                        <!------------------------------------------->
+                        <h3> Velero 3</h3>
+                        <div  class="barco">
+                            <p>Fila</p>
+                            <select id="filaV3">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                                <option value="4">E</option>
+                                <option value="5">F</option>
+                                <option value="6">G</option>
+                                <option value="7">H</option>
+                                <option value="8">I</option>
+                                <option value="9">J</option>  
+                            </select>
+                        </div>
+                        <div  class="barco">
+                            <p>Columna</p>
+                            <select id="columnaV3">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option> 
+                            </select>
+                        </div>
+
+                        <div class="barco">
+                            <p>Dirección</p>
+                            <select id="direccionV3">
+                                <option value="Horizontal">Horizontal</option>
+                                <option value="Vertical">Vertical</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <input value="Validar" type="submit" id="validar" class="botones" > 
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="caja" id="caja">
+            <div class='board' > 
+                <h2>Nuestra Flota</h2>
+                <table class ="tabla" id='miTablero' border="5" align="center">
+                    <th></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+                    <tr>
+                         <!--CF-->
+                        <th>A</th><td id="F00"></td><td id="F01"></td><td id="F02"></td><td id="F03"></td><td id="F04"></td><td id="F05"></td><td id="F06"></td><td id="F07"></td><td id="F08"></td><td id="F09"></td>
+                    </tr>
+                    <tr>
+                        <th>B</th><td id='F10'></td><td id='F11'></td><td id='F12'></td><td id='F13'></td><td id='F14'></td><td id='F15'></td><td id='F16'></td><td id='F17'></td><td id='F18'></td><td id='F19'></td>
+                    </tr>
+                    <tr>
+                        <th>C</th><td id='F20'></td><td id='F21'></td><td id='F22'></td><td id='F23'></td><td id='F24'></td><td id='F25'></td><td id='F26'></td><td id='F27'></td><td id='F28'></td><td id='F29'></td>
+                    </tr>
+                    <tr>
+                        <th>D</th><td id='F30'></td><td id='F31'></td><td id='F32'></td><td id='F33'></td><td id='F34'></td><td id='F35'></td><td id='F36'></td><td id='F37'></td><td id='F38'></td><td id='F39'></td>
+                    </tr>
+                    <tr>
+                        <th>E</th><td id='F40'></td><td id='F41'></td><td id='F42'></td><td id='F43'></td><td id='F44'></td><td id='F45'></td><td id='F46'></td><td id='F47'></td><td id='F48'></td><td id='F49'></td>
+                    </tr>
+                    <tr>
+                        <th>F</th><td id='F50'></td><td id='F51'></td><td id='F52'></td><td id='F53'></td><td id='F54'></td><td id='F55'></td><td id='F56'></td><td id='F57'></td><td id='F58'></td><td id='F59'></td>
+                    </tr>
+                    <tr>
+                        <th>G</th><td id='F60'></td><td id='F61'></td><td id='F62'></td><td id='F63'></td><td id='F64'></td><td id='F65'></td><td id='F66'></td><td id='F67'></td><td id='F68'></td><td id='F69'></td>
+                    </tr>
+                    <tr>
+                        <th>H</th><td id='F70'></td><td id='F71'></td><td id='F72'></td><td id='F73'></td><td id='F74'></td><td id='F75'></td><td id='F76'></td><td id='F77'></td><td id='F78'></td><td id='F79'></td>
+                    </tr>
+                    <tr>
+                        <th>I</th><td id='F80'></td><td id='F81'></td><td id='F82'></td><td id='F83'></td><td id='F84'></td><td id='F85'></td><td id='F86'></td><td id='F87'></td><td id='F88'></td><td id='F89'></td>
+                    </tr>
+                    <tr>
+                        <th>J</th><td id='F90'></td><td id='F91'></td><td id='F92'></td><td id='F93'></td><td id='F94'></td><td id='F95'></td><td id='F96'></td><td id='F97'></td><td id='F98'></td><td id='F99'></td>
+                    </tr>
+                </table>
+            </div>
+            <div class='board' id ='Oponente'> 
+                <h2>Flota Oponente</h2>
+                <table border="5" align="center">
+                    <th></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+                    <tr>            <!--CF-->
+                        <th>A</th>
+                        <td><button id="00"></button></td>
+                        <td><button id="01"></button></td>
+                        <td><button id="02"></button></td>
+                        <td><button id="03"></button></td>
+                        <td><button id="04"></button></td>
+                        <td><button id="05"></button></td>
+                        <td><button id="06"></button></td>
+                        <td><button id="07"></button></td>
+                        <td><button id="08"></button></td>
+                        <td><button id="09"></button></td>
+                    </tr>
+                    <tr>
+                        <th>B</th>
+                        <td><button id="10"></button></td>
+                        <td><button id="11"></button></td>
+                        <td><button id="12"></button></td>
+                        <td><button id="13"></button></td>
+                        <td><button id="14"></button></td>
+                        <td><button id="15"></button></td>
+                        <td><button id="16"></button></td>
+                        <td><button id="17"></button></td>
+                        <td><button id="18"></button></td>
+                        <td><button id="19"></button></td>
+                    </tr>
+                    <tr>
+                        <th>C</th>
+                        <td><button id="20"></button></td>
+                        <td><button id="21"></button></td>
+                        <td><button id="22"></button></td>
+                        <td><button id="23"></button></td>
+                        <td><button id="24"></button></td>
+                        <td><button id="25"></button></td>
+                        <td><button id="26"></button></td>
+                        <td><button id="27"></button></td>
+                        <td><button id="28"></button></td>
+                        <td><button id="29"></button></td>
+                    </tr>
+                    <tr>
+                        <th>D</th>
+                        <td><button id="30"></button></td>
+                        <td><button id="31"></button></td>
+                        <td><button id="32"></button></td>
+                        <td><button id="33"></button></td>
+                        <td><button id="34"></button></td>
+                        <td><button id="35"></button></td>
+                        <td><button id="36"></button></td>
+                        <td><button id="37"></button></td>
+                        <td><button id="38"></button></td>
+                        <td><button id="39"></button></td>
+                    </tr>
+                    <tr>
+                        <th>E</th>
+                        <td><button id="40"></button></td>
+                        <td><button id="41"></button></td>
+                        <td><button id="42"></button></td>
+                        <td><button id="43"></button></td>
+                        <td><button id="44"></button></td>
+                        <td><button id="45"></button></td>
+                        <td><button id="46"></button></td>
+                        <td><button id="47"></button></td>
+                        <td><button id="48"></button></td>
+                        <td><button id="49"></button></td>
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                        <td><button id="50"></button></td>
+                        <td><button id="51"></button></td>
+                        <td><button id="52"></button></td>
+                        <td><button id="53"></button></td>
+                        <td><button id="54"></button></td>
+                        <td><button id="55"></button></td>
+                        <td><button id="56"></button></td>
+                        <td><button id="57"></button></td>
+                        <td><button id="58"></button></td>
+                        <td><button id="59"></button></td>
+                    </tr>
+                    <tr>
+                        <th>G</th>
+                        <td><button id="60"></button></td>
+                        <td><button id="61"></button></td>
+                        <td><button id="62"></button></td>
+                        <td><button id="63"></button></td>
+                        <td><button id="64"></button></td>
+                        <td><button id="65"></button></td>
+                        <td><button id="66"></button></td>
+                        <td><button id="67"></button></td>
+                        <td><button id="68"></button></td>
+                        <td><button id="69"></button></td>
+                    </tr>
+                    <tr>
+                        <th>H</th>
+                        <td><button id="70"></button></td>
+                        <td><button id="71"></button></td>
+                        <td><button id="72"></button></td>
+                        <td><button id="73"></button></td>
+                        <td><button id="74"></button></td>
+                        <td><button id="75"></button></td>
+                        <td><button id="76"></button></td>
+                        <td><button id="77"></button></td>
+                        <td><button id="78"></button></td>
+                        <td><button id="79"></button></td>
+                    </tr>
+                    <tr>
+                        <th>I</th>
+                        <td><button id="80"></button></td>
+                        <td><button id="81"></button></td>
+                        <td><button id="82"></button></td>
+                        <td><button id="83"></button></td>
+                        <td><button id="84"></button></td>
+                        <td><button id="85"></button></td>
+                        <td><button id="86"></button></td>
+                        <td><button id="87"></button></td>
+                        <td><button id="88"></button></td>
+                        <td><button id="89"></button></td>
+                    </tr>
+                    <tr>
+                        <th>J</th>
+                        <td><button id="90"></button></td>
+                        <td><button id="91"></button></td>
+                        <td><button id="92"></button></td>
+                        <td><button id="93"></button></td>
+                        <td><button id="94"></button></td>
+                        <td><button id="95"></button></td>
+                        <td><button id="96"></button></td>
+                        <td><button id="97"></button></td>
+                        <td><button id="98"></button></td>
+                        <td><button id="99"></button></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <script src="testBarcos/logica_juego/metodos_barco.js"></script>
+    </body>
+</html>

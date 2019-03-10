@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "flamante-stencil";
+    src: url("../fuente/flamante-stencil/Flamante-Stencil-Bold-FFP.ttf");
+}
+header{
+    padding: 0.3%;
+    background-color:cadetblue;
+}
+header h1{
+    font-family: "flamante-stencil";
+    margin:2%;
+    text-align: center;
+}
+body {
+    background: #CEF6EC;
+}
+
+div .board {
+    display: inline-block;
+    width: 515px;
+    height: 600px;
+    margin:auto;
+    background:url("../img/mar2.jpg") no-repeat 0 100px;
+    background-size: 900px 460px;
+    /*background-size:1000px;*/
+}
+
+
+
+div#messageArea {
+    position:absolute;
+    top:0px;
+    left:0px;
+    color: rgb(83, 175, 19);
+    font-size:70px;
+}
+
+table{
+    position:absolute;
+    top:28%;
+    border-spacing:0px;
+    border="5";
+    align-content: "center";
+}
+
+
+th {
+    background:#1C1C1C;
+    color:white;
+    font-size:28px;
+
+}
+
+td {
+    width:44px;
+    height: 40px;
+}
+
+
+form input {
+    background-color: rgb(152, 207, 113);
+    border-color: rgb(83, 175, 19);
+    font-size:1em;
+}
+
+/*#fireButton {
+    border-radius:2em;
+    background-color:red;
+    font-size: 22px;
+}
+
+.hit {
+    background: url("https://edge.alluremedia.com.au/m/l/2017/09/Nukesds2.jpg") no-repeat center center;
+    background-size: 100px;
+}
+
+.miss {
+    background: url("https://vignette.wikia.nocookie.net/airmech/images/3/3b/Bomb.png/revision/latest?cb=20140112081845") no-repeat center center;
+    background-size: 60px;
+}*/
+.caja{
+    display: flex;
+}
+input{
+    width:44px;
+    height: 40px;
+    background : inherit;
+}
+button{
+    width:44px;
+    height: 40px;
+    background : inherit;
+}
+.tocado{
+    background-image: url(../img/tocado.svg.png);
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+}
+.agua{
+    background-image: url('../img/agua.svg.png');
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+}
+
+.barcos{
+    background-image: url(../img/viking-ship.png);
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+}
+
+#formulario{
+    display: flex;
+    border:4px ridge black;
+    width: 85%;
+    margin: 2% 5% 2% 5%;
+    padding: 2% 2% 3% 2%;
+}
+.bloque{
+    justify-content: center;
+    width: 100%;
+}
+
+.barco{
+    display: inline-block;
+    margin-left:2%;
+    width: 20%;
+}
+h2{
+    margin-left: 5%;
+}
+.botones{
+    width:100%;
+    height: 15%;
+    margin-top: 10%;
+   
+}
+#aleatorio{
+    float:right;
+    width:10%;
+    height: 15%;
+    margin-right: 5%;
+    margin-bottom:1%;
+    padding: 0.5% 0.5% 1% 0.5%;
+}
+
+#mensajeError{
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    margin-left: 39%;
+    border: 4px dashed red;
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    
+}

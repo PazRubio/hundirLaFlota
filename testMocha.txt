@@ -1,0 +1,71 @@
+Crear pruebas con Mocha
+-------------------------
+1) Crear un nuevo proyecto (hundirLaFlota)
+2) instalarlo localmente:
+npm install --save-dev mocha chai
+(aqui ya vemos la carpeta node_modules)
+3) crear un archivo package.json:
+npm init (y pide por consola la info)
+npm init -y (modificamos despues la info en el archivo)
+{
+  "name": "hundirLaFlota",
+  "version": "1.0.0",
+  "description": "motor del juego hundir la flota",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Carlos Tessier",
+  "license": "GPL",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
+}
+*(Lo crea diferente asique lo modificamos con este codigo).
+4) Creamos el archivo main_test.js y llamamos a mocha
+mocha archivo javaScript (mocha main_test.js)
+*(imprime 0 passing)
+5) creamos la carpeta test y metemos el archivo main_test.js
+6) npm test (misma salida que si ejecutamos mocha archivo.js)
+
+Test suites y tests specs (describe e it)
+------------------------------------------
+1) Abrimos main_test.js
+'Mocha' string que describe lo que prueba la suit de pruebas
+function() la funcion.
+describe('Mocha', function(){
+
+});
+(a esto se le llama prueba de normalidad)
+
+2) dentro de la funcion podemos crear nuevas funciones precedidas de it(): it('debería ejecutar nuestros tests usando npm', function(){
+
+   });
+   *******************************************************************
+   
+describe('Mocha', function(){
+   it('debería ejecutar nuestros tests usando npm', function(){
+
+   });
+});
+**************************************************************************
+3) importar el archivo chai en la parte superior
+*************************************************************************
+
+var expect = require('chai').expect;
+
+// Test suite
+describe('Mocha', function () {
+    // Test spec (unit test)
+    it('debería ejecutar nuestros tests usando npm', function () {
+        expect(true).to.be.ok;
+    });
+});
+
+***************************************************************************
+4) ejecutar npm test
