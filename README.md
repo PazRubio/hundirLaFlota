@@ -2,13 +2,14 @@
 
 El objetivo es desarrollar un juego Batalla naval, que tendrá una funcionalidad similar a la de este ejemplo: https://codepen.io/collosic/pen/JpDfn.
 
-Hemos implementado un formulario por el que se introducirían los barcos a mano, y están las comprobaciones creadas en JavaScript, pero no hemos logrado que unir ambas partes para su correcto funcionamiento por lo que dejamos deshabilitada la opción de "Validar". 
+Hemos implementado un formulario por el que se introducirían los barcos a mano, y que por defecto crea un barco por línea para facilitqar las prubas. Al validar el formulario se genera de forma aleatoria la flota del oponente. También contamos con un botón "Aleatorio" que genera ambas flotas de manera aleatoria. En la pantalla del juego, a la izquierda veremos nuestro tablero con los barcos dibujados, y conforme la máquina dispara se nos irán pintando agua o disparo dependiendo de si acierta o no. Si el contrincante acierta, sigue jugando hasta dar a agua, momento en el que se nos devuelve el turno. De igual manera, nosotros podemos disparar (en el tablero derecho) hasta que demos a agua.
 Para poder publicar la página en Github Pages hemos tenido que eliminar la carpeta de node_modules ya que múltiples archivos daban error, pero en la entrega del aula virtual se incluyen.
 
 ## Historias de usuario
 En la práctica se nos indican los requisitos en forma de las historias de usuario. Algunas no las hemos finalizado.
 
 ### Completas
+* Historía de usuario 1: Como jugador querría colocar mis barcos en el tablero para empezar a jugar.
 * Historía de usuario 2: Como jugador querría poder disparar en el tablero del enemigo, para poder hundir sus barcos
 * Historía de usuario 3: Como jugador querría guardar los disparos de ni enemigo en mi tablero
 * Historía de usuario 5: Como jugador querría poder ver el tablero del enemigo con mis disparos y ver mi tablero con mis barcos y disparos recibidos.
@@ -20,7 +21,6 @@ En la práctica se nos indican los requisitos en forma de las historias de usuar
 * Historía de usuario 13: Cómo desarrollador querría publicar mi proyecto github en github pages para poder jugar online a mi juego.
 
 ### Incompletas
-* Historía de usuario 1: Como jugador querría colocar mis barcos en el tablero para empezar a jugar.
 * Historía de usuario 4: Como jugador querría que al hundir un barco del enemigo me informe para saber que lo he hundido
 * Historia de usuario 6: Como jugador querría que han hundido todos los barcos de un jugador para que saber quien ha ganado
 * Historía de usuario 11: Cómo desarrollador querría tener test unitarios con mocha y chai para probar las funciones de la lógica del juego 
