@@ -1,5 +1,4 @@
 const TAM = 10; /* tamanio del tablero */
-var danios = [];
 var tablero = []; /* nuestro array de barcos */
 var tableroOponente = []; /* array de los barcos del oponente */
 var contDisparos = 0; /*  */
@@ -8,10 +7,8 @@ var tirosAleatorios = []; /* array con los tiros que realiza el oponente */
 var totalBarcos = 0;
 
 /* Objeto Jugador con el nombre y los barcos */
-function Jugador(nombre, turno, ganado, barcos, tablero) {
+function Jugador(nombre, barcos, tablero) {
     this.nombre = nombre;
-    this.turno = turno;
-    this.ganado = ganado;
     this.barcos = barcos;
     this.tablero = tablero;
 }
@@ -179,7 +176,7 @@ function colocar(arrayComprobar){
     if(!posicionesCorrectas){
         document.getElementById('mensajeError').innerHTML = "Posiciones incorrectas, los barcos no pueden super ponerse";        
     } else {
-	    jugador = new Jugador("Nuestro", false, false, arrayBarcos, tablero);
+	    var jugador = new Jugador("Nuestro", arrayBarcos, tablero);
     	arrayBarcos.forEach(barco => {        
 	        var coord = generaCoordenadas(parseInt(barco.coordenada[0]), parseInt(barco.coordenada[1]), barco.dir, barco.numeroCasillas);
 	        tablero.push(coord);
@@ -191,50 +188,6 @@ function colocar(arrayComprobar){
         imprimirBarcos(jugador);
     }
     return posicionesCorrectas;  
-}
-
-/* pruebas */
-function comprobarBarco(jugador, coordenadas) {
-    var barcoEncontrado, barco;
-
-    for (let i = 0; i < jugador.barcos.length; i++) {
-        barco = jugador.barcos[i];
-
-        barcoEncontrado = barco.localizaciones.filter(
-            function (coordenadaActual) {
-                return (coordenadaActual[0] === coordenadas[0]) && 
-                    (coordenadaActual[1] === coordenadas[1]);
-            })[0];
-
-        if (barcoEncontrado) {
-            danios.push();
-            return true;
-        }
-        else{
-            // no hacer nada
-        }
-    }
-
-    return false;
-}
-
-/* pruebas */
-function daniosEnElBarco (danios){
-    if(danios.length == 0){
-        return true;
-        //return "No hay daños";
-    }else{
-        //return "Hay daños";
-        return false;
-    }
-}
-
-/**/
-function colocaBarco(tableroFlota, fila, columna, tam){
-    for(let i=0; i<tam; i++){
-        tableroFlota[fila][columna+i] = tam;
-    }
-    return tableroFlota;
 }
 
 function generaJugadores(jugador){
@@ -251,7 +204,6 @@ function generaJugadores(jugador){
 /* metodo para generar todos los barcos de un tablero.
    Devuelve el objeto Jugador con todos los barcos que tiene */
 function generaFlotaAleatoria(jugador){
-    var tableroBarcos = [TAM][TAM];// = iniTablero();
     var arrayBarcos = new Array();
     var tams = [1, 1, 1, 2, 3];
     var nBarcos = 8; 
@@ -267,6 +219,7 @@ function generaFlotaAleatoria(jugador){
             var fila = Math.floor((Math.random()*TAM));
             var columna = Math.floor((Math.random()*TAM));
             var direccion = Math.random() >= 0.5; // posicion aleatoria: 50% horizontal (1). 50% vertical (0)
+            var barco;
 
             if(noSeTocan(arrayBarcos, fila, columna, direccion, tamBarco)){
                 switch (tamBarco){
@@ -307,7 +260,7 @@ function generaFlotaAleatoria(jugador){
         }
     });
     tablero.forEach(barco => { totalBarcos += barco.length; });
-    return new Jugador("Oponente", false, false, arrayBarcos, tablero);
+    return new Jugador("Oponente", arrayBarcos, tablero);
 }
 
 /* funcion que con una fila y columna de inicio, el tamanio del barco y su direccion
@@ -348,8 +301,8 @@ function noSeTocan(arrayBarcos, f, c, dir, tam){
         /* para cada barco, calculamos el array con todas las coordenadas que ocupa
          por ejemplo, para un barco que empieza en [0,1], y ocupa dos horizontal, serian: [[0,1],[0,2]]*/
         for(let i=0; i<arrayBarcos.length; i++){
-            ocupadas = generaCoordenadas(arrayBarcos[i].coordenada[0], arrayBarcos[i].coordenada[1], arrayBarcos[i].dir, arrayBarcos[i].numeroCasillas);
-            nuevoBarco = generaCoordenadas(f, c, dir, tam);
+            var ocupadas = generaCoordenadas(arrayBarcos[i].coordenada[0], arrayBarcos[i].coordenada[1], arrayBarcos[i].dir, arrayBarcos[i].numeroCasillas);
+            var nuevoBarco = generaCoordenadas(f, c, dir, tam);
             /* comparamos las coordenadas de los barcos ya guardados ("ocupadas") 
                con las coordenadas del barco que queremos guardar.
                Si el filtro devuelve alguna coincidente, devolvemos false y no se introduce en el array */
@@ -402,7 +355,6 @@ aleatorio.addEventListener('click', function(e){
    que comprueba el tiro */
 var botones = document.querySelectorAll("button");
 botones.forEach(boton => {
-    var idBoton = boton.getAttribute("id");
     boton.addEventListener("click", comprobarTiro(boton));    
 });
 
