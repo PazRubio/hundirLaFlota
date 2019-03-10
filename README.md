@@ -3,7 +3,6 @@
 El objetivo es desarrollar un juego Batalla naval, que tendrá una funcionalidad similar a la de este ejemplo: https://codepen.io/collosic/pen/JpDfn.
 
 Hemos implementado un formulario por el que se introducirían los barcos a mano, y que por defecto crea un barco por línea para facilitar las prubas. Al validar el formulario se genera de forma aleatoria la flota del oponente. También contamos con un botón "Aleatorio" que genera ambas flotas de manera aleatoria. 
-**Atención**: en github pages, al pulsar en "Validar" la página se recarga y no deja jugar. En local esto no pasa, y no encontramos el problema. Si se descarga la página se puede probar bien, y la funcinalidad de "Aletorio" sí que funciona en Github Pages.
 En la pantalla del juego, a la izquierda veremos nuestro tablero con los barcos dibujados, y conforme la máquina dispara se nos irán pintando agua o disparo dependiendo de si acierta o no. Si el contrincante acierta, sigue jugando hasta dar a agua, momento en el que se nos devuelve el turno. De igual manera, nosotros podemos disparar (en el tablero derecho) hasta que demos a agua. Añadimos un botón "Reiniciar" que vuelve al formulario para empezar de nuevo cuando finalice la partida.
 Para poder publicar la página en Github Pages hemos tenido que eliminar la carpeta de node_modules ya que múltiples archivos daban error, pero en la entrega del aula virtual se incluyen.
 
