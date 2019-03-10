@@ -135,10 +135,10 @@ h2{
    
 }
 #aleatorio{
-    float:right;
+    float:left;
     width:10%;
     height: 15%;
-    margin-right: 5%;
+    margin-left: 5%;
     margin-bottom:1%;
     padding: 0.5% 0.5% 1% 0.5%;
 }
@@ -148,7 +148,6 @@ h2{
     font-weight: bold;
     color: red;
     margin-left: 39%;
-    border: 4px dashed red;
     width: 20%;
     padding: 10px;
     text-align: center;

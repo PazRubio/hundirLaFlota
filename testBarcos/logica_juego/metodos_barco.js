@@ -41,9 +41,8 @@ function Velero(coordenada, dir) {
     Barco.call(this, coordenada, 0, dir, 1);
 }
 
-/* para colocar a mano los barcos */
+/* Cogemos los datos del formulario para colocar a mano los barcos */
 function validarColocacion() {
-
     //Portaaviones
     //fila
     var filaP = document.getElementById('filaP');
@@ -145,7 +144,8 @@ function validarColocacion() {
     return colocar(barcos);
 }
 
-/**/
+/* una vez cogidos los datos del formulario, se comprueba si todos los barcos estan bien colocados 
+   (es decir, si no se tocan) */
 function colocar(arrayComprobar){
     var posicionesCorrectas = true;
     var arrayBarcos = new Array();

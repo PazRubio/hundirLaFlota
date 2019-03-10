@@ -7,23 +7,17 @@
 
     </head>
     <body>
-
         <header>
             <h1>HUNDIR LA FLOTA!!!</h1>
         </header>
         <div id="primeraPagina">
             <h2> Coloca tus barcos: </h2>
 
-
             <input value="Aleatorios" type="submit" id="aleatorio" onclick='generaJugadores("nuestro");'>
 
-
             <form method="post" onsubmit="return validarColocacion()">
-
-                <div id="mensajeError">Coordenadas Incorrectas</div>
-
+                <div id="mensajeError"></div>
                 <div id="formulario">
-
                     <div class="bloque">
                         <h3> Portaaviones</h3> 
                         <div  class="barco">
@@ -68,7 +62,7 @@
 
 
 
-                        <!------------------------------------------------------------>
+                         
 
                         <h3> Acorazado</h3>
                         <div  class="barco">
@@ -112,7 +106,7 @@
                             </select>
                         </div>
                     </div>
-                    <!------------------------------------------------------------>
+                     
 
                     <div class="bloque">
                         <h3> Buque</h3>
@@ -156,9 +150,6 @@
                             </select>
                         </div>
 
-
-                        <!------------------------------------------------------------>
-
                         <h3> Lancha 1</h3>
                         <div  class="barco">
                             <p>Fila</p>
@@ -200,8 +191,6 @@
                             </select>
                         </div>
                     </div>
-
-                    <!------------------------------------------------------------>
 
                     <div class="bloque">
                         <h3> Lancha 2</h3>
@@ -245,7 +234,6 @@
                             </select>
                         </div>
 
-                        <!-------------------------------------------------->
                         <h3> Velero</h3>
                         <div  class="barco">
                             <p>Fila</p>
@@ -287,7 +275,7 @@
                             </select>
                         </div>
                     </div>
-                    <!-------------------------------------------------->
+                    
                     <div class="bloque">
                         <h3> Velero 2</h3>
                         <div  class="barco">
@@ -329,7 +317,7 @@
 
                             </select>
                         </div>
-                        <!------------------------------------------->
+                        
                         <h3> Velero 3</h3>
                         <div  class="barco">
                             <p>Fila</p>
@@ -372,8 +360,7 @@
                         </div>
                     </div>
                     <div>
-                        <input value="Validar" type="submit" id="validar" class="botones" > 
-
+                        <input title="No" value="Validar" type="submit" id="validar" class="botones"> 
                     </div>
                 </div>
             </form>
